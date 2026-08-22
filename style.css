@@ -29,7 +29,6 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
-
 .site-nav {
   margin-bottom: 2em;
 }
@@ -46,11 +45,13 @@ li {
 }
 
 .nav-toggle {
-  display: none !important;
+  display: none;
   background: none;
   border: none;
   font-size: 1.5em;
   cursor: pointer;
+  color: #222;
+  padding: 4px 8px;
 }
 
 .nav-links {
@@ -64,16 +65,22 @@ li {
 /* スマホサイズ(768px以下)ではハンバーガーメニューに切り替え */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block !important;
+    display: inline-block;
   }
 
   .nav-links {
-    display: none;
     flex-direction: column;
-    gap: 0.5em;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links li {
+    padding: 0.5em 0;
   }
 
   .nav-links.open {
-    display: flex;
+    max-height: 300px;
   }
 }
