@@ -1,0 +1,25 @@
+---
+layout: base.njk
+title: 記事一覧
+---
+
+<div class="page-hero">
+  <div class="page-icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6"/></svg>
+  </div>
+  <h1>記事一覧</h1>
+</div>
+
+<ul class="post-list">
+{% for post in collections.post %}
+  <li class="post-card">
+    <a href="{{ post.url | url }}">
+      <span class="post-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6"/></svg>
+      </span>
+      <span class="post-title">{{ post.data.title }}</span>
+      <span class="post-arrow">›</span>
+    </a>
+  </li>
+{% endfor %}
+</ul>
