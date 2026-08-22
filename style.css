@@ -67,18 +67,35 @@ body {
   .nav-toggle {
     display: inline-block;
   }
+
+  .site-nav {
+    position: relative;
+  }
+
   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
     flex-direction: column;
     gap: 0;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    z-index: 10;
+    padding: 0 40px;
   }
+
   .nav-links li {
-    padding: 0.5em 0;
+    padding: 0.8em 0;
+    border-bottom: 1px solid #f1f5f9;
   }
+
   .nav-links.open {
     max-height: 300px;
+    padding: 12px 40px;
   }
 }
 
