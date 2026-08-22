@@ -1,0 +1,18 @@
+backend:
+  name: github
+  repo: fyoshihiro/my-blog
+  branch: main
+
+media_folder: "img"
+public_folder: "/img"
+
+collections:
+  - name: "posts"
+    label: "記事"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "レイアウト", name: "layout", widget: "hidden", default: "post.njk" }
