@@ -6,7 +6,7 @@
   <title>{{ title }}</title>
 </head>
 <body>
-  <a href="/posts/">← 記事一覧に戻る</a>
+  <a href="{{ '/posts/' | url }}">← 記事一覧に戻る</a>
   <h1>{{ title }}</h1>
   {{ content | safe }}
 </body>

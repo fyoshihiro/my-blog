@@ -3,4 +3,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("post", function(collectionApi) {
     return collectionApi.getFilteredByGlob("posts/*.md");
   });
+
+  return {
+    pathPrefix: "/blog/"
+  };
 };
