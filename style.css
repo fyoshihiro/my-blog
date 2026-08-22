@@ -108,6 +108,43 @@ main.container {
   overflow: hidden;
 }
 
+/* 左上のぼかし円 */
+main.container::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -150px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, rgba(37,99,235,0) 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* 右上のドット柄 */
+main.container::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 180px;
+  height: 180px;
+  background-image: radial-gradient(circle, #cbd5e1 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.page-hero {
+  position: relative;
+  z-index: 1;
+}
+
+.post-list {
+  position: relative;
+  z-index: 1;
+}
+
 /* ===== ページ見出し ===== */
 .page-hero {
   margin-bottom: 40px;
@@ -119,7 +156,7 @@ main.container {
 }
 
 .page-hero h1 {
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 0 0 12px 0;
   border: none;
   padding: 0;
