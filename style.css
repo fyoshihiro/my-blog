@@ -46,7 +46,7 @@ li {
 }
 
 .nav-toggle {
-  display: none;
+  display: none !important;
   background: none;
   border: none;
   font-size: 1.5em;
@@ -64,7 +64,7 @@ li {
 /* スマホサイズ(768px以下)ではハンバーガーメニューに切り替え */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block;
+    display: block !important;
   }
 
   .nav-links {
