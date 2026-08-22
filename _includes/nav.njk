@@ -4,13 +4,7 @@
     <button class="nav-toggle" aria-label="メニュー">☰</button>
   </div>
   <ul class="nav-links">
-    <li><a href="{{ '/posts/' | url }}">記事一覧</a></li>
-    <li><a href="{{ '/categories/' | url }}">カテゴリ</a></li>
+    <li><a href="{{ '/posts/' | url }}" class="{% if page.url == '/blog/posts/' %}active{% endif %}">記事一覧</a></li>
+    <li><a href="{{ '/categories/' | url }}" class="{% if page.url == '/blog/categories/' %}active{% endif %}">カテゴリ</a></li>
   </ul>
 </nav>
-
-<script>
-  document.querySelector('.nav-toggle').addEventListener('click', function() {
-    document.querySelector('.nav-links').classList.toggle('open');
-  });
-</script>

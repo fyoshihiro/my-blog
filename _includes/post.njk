@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  <link rel="stylesheet" href="{{ '/style.css' | url }}">
-</head>
-<body>
-    {% include "nav.njk" %}
-  <main class="container">
-    <a href="{{ '/posts/' | url }}">← 記事一覧に戻る</a>
-    <h1>{{ title }}</h1>
-    <p><small>カテゴリ:{{ category }}</small></p>
-    {{ content | safe }}
-  </main>
-</body>
-</html>
+---
+layout: base.njk
+title: 記事一覧
+---
+
+<div class="page-hero">
+  <div class="page-icon">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6"/></svg>
+  </div>
+  <h1>記事一覧</h1>
+</div>
+
+<ul class="post-list">
+{% for post in collections.post %}
+  <li class="post-card">
+    <a href="{{ post.url | url }}">
+      <span class="post-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z"/><path d="M14 2v6h6"/></svg>
+      </span>
+      <span class="post-title">{{ post.data.title }}</span>
+      <span class="post-arrow">›</span>
+    </a>
+  </li>
+{% endfor %}
+</ul>

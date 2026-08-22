@@ -1,16 +1,180 @@
-body {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
-  font-family: -apple-system, "Hiragino Sans", sans-serif;
-  line-height: 1.8;
-  color: #222;
+* {
+  box-sizing: border-box;
 }
 
+body {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, "Hiragino Sans", sans-serif;
+  line-height: 1.8;
+  color: #1e293b;
+  background: #f8fafc;
+}
+
+/* ===== ヘッダー ===== */
+.site-nav {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 20px 40px;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.4em;
+  color: #1e293b;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #1e293b;
+  padding: 4px 8px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: #64748b;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links a.active {
+  color: #2563eb;
+  border-bottom: 2px solid #2563eb;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: inline-block;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  .nav-links li {
+    padding: 0.5em 0;
+  }
+  .nav-links.open {
+    max-height: 300px;
+  }
+}
+
+/* ===== 本文エリア(装飾背景) ===== */
+main.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== ページ見出し ===== */
+.page-hero {
+  margin-bottom: 40px;
+}
+
+.page-icon {
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.page-hero h1 {
+  font-size: 2.2em;
+  margin: 0 0 12px 0;
+  border: none;
+  padding: 0;
+  color: #0f172a;
+}
+
+.page-hero h1::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  background: #2563eb;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+/* ===== 記事一覧カード ===== */
+.post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.post-card a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.post-card a:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+}
+
+.post-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.post-title {
+  flex: 1;
+  color: #0f172a;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.post-arrow {
+  color: #94a3b8;
+  font-size: 1.4em;
+}
+
+/* ===== 記事詳細ページ ===== */
 h1 {
   font-size: 1.8em;
   border-bottom: 2px solid #eee;
-  padding-bottom: 0.3em;
+  padding-bottom: 0.4em;
 }
 
 a {
@@ -20,67 +184,4 @@ a {
 
 a:hover {
   text-decoration: underline;
-}
-
-ul {
-  padding-left: 1.2em;
-}
-
-li {
-  margin-bottom: 0.5em;
-}
-.site-nav {
-  margin-bottom: 2em;
-}
-
-.nav-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5em;
-  cursor: pointer;
-  color: #222;
-  padding: 4px 8px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5em;
-  list-style: none;
-  padding: 0;
-  margin: 0.5em 0 0 0;
-}
-
-/* スマホサイズ(768px以下)ではハンバーガーメニューに切り替え */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-
-  .nav-links li {
-    padding: 0.5em 0;
-  }
-
-  .nav-links.open {
-    max-height: 300px;
-  }
 }
