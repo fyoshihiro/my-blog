@@ -1,3 +1,13 @@
+backend:
+  name: github
+  repo: fyoshihiro/my-blog
+  branch: main
+  base_url: https://my-blog.fujii-yosihiro.workers.dev
+  auth_endpoint: auth
+
+media_folder: "img"
+public_folder: "/img"
+
 collections:
   - name: "posts"
     label: "記事"
