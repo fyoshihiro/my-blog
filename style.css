@@ -29,3 +29,51 @@ ul {
 li {
   margin-bottom: 0.5em;
 }
+
+.site-nav {
+  margin-bottom: 2em;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+  list-style: none;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+}
+
+/* スマホサイズ(768px以下)ではハンバーガーメニューに切り替え */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+}
