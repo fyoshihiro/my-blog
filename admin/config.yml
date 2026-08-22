@@ -1,13 +1,3 @@
-backend:
-  name: github
-  repo: fyoshihiro/my-blog
-  branch: main
-  base_url: https://my-blog.fujii-yosihiro.workers.dev
-  auth_endpoint: auth
-
-media_folder: "img"
-public_folder: "/img"
-
 collections:
   - name: "posts"
     label: "記事"
@@ -16,5 +6,9 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "タイトル", name: "title", widget: "string" }
+      - label: "カテゴリ"
+        name: "category"
+        widget: "select"
+        options: ["お知らせ", "日記", "技術メモ"]
       - { label: "本文", name: "body", widget: "markdown" }
       - { label: "レイアウト", name: "layout", widget: "hidden", default: "post.njk" }
