@@ -50,7 +50,13 @@ export default {
       });
     }
 
-    // 3. それ以外は静的ファイルを配信
-    return env.ASSETS.fetch(request);
+    // 3. それ以外は静的ファイルを配信(/blog/ プレフィックスを除去)
+    const newUrl = new URL(request.url);
+    if (newUrl.pathname.startsWith("/blog/")) {
+    newUrl.pathname = newUrl.pathname.replace("/blog/", "/") || "/";
+    } else if (newUrl.pathname === "/blog") {
+    newUrl.pathname = "/";
+    }
+    return env.ASSETS.fetch(new Request(newUrl.toString(), request));
   },
 };
