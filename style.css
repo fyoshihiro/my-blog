@@ -239,3 +239,23 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #f8fafc !important;
+    color: #1e293b !important;
+  }
+  .page-hero h1,
+  h1 {
+    color: #0f172a !important;
+  }
+  .post-title {
+    color: #0f172a !important;
+  }
+  .site-nav {
+    background: #fff !important;
+  }
+  .brand {
+    color: #1e293b !important;
+  }
+}
