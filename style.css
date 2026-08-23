@@ -245,6 +245,10 @@ a:hover {
     background: #f8fafc !important;
     color: #1e293b !important;
   }
+  h1, h2, h3, h4, h5, h6,
+  p, li, span, a, small {
+    color: inherit !important;
+  }
   .page-hero h1,
   h1 {
     color: #0f172a !important;
@@ -257,5 +261,8 @@ a:hover {
   }
   .brand {
     color: #1e293b !important;
+  }
+  main.container a {
+    color: #2563eb !important;
   }
 }
