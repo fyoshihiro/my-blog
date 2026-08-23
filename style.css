@@ -265,4 +265,10 @@ a:hover {
   main.container a {
     color: #2563eb !important;
   }
+  .nav-links a {
+    color: #64748b !important;
+  }
+  .nav-links a.active {
+    color: #2563eb !important;
+  }
 }
